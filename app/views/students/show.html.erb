@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Dados do estudante</h3>
+<p>
+  <strong>Nome:</strong>
+  <%= @student.nome %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @student.matricula %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @student.ano %>
+</p>
+
+<p>
+  <strong>Semestre:</strong>
+  <%= @student.semestre %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @student.senha %>
+</p>
+
+<p>
+  <strong>Homologado:</strong>
+  <%= (@student.homologado)?"Sim":"Não" %>
+</p>
+
+<h3>Dados do curso</h3>
+
+<p>
+  <strong>Nome do curso:</strong>
+  <%= @student.course.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @student.course.sigla %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @student.course.site %>
+</p>
+
+<h3>Telefones</h3>
+<p>
+  <% @student.contacts.each do |contact| %>
+  <%= contact.tipo %>
+  <%= contact.numero %>
+  <br>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
